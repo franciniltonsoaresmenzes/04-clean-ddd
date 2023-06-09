@@ -7,3 +7,10 @@ Desgin dirigido à domínio
 - Domain Expert
   - Conversa
 - Linguagem ubíqua
+
+- Agregados
+- Value Objects  
+- Eventos de domínio
+- Subdomínio (Bounded Contexts)
+- Entidades
+- Casos de usos
