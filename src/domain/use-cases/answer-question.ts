@@ -1,3 +1,4 @@
+import { AnserRepository } from '../../repositories/answer-repository'
 import { Answer } from '../entities/answer'
 
 interface AnswerQuestionUseCaseResquest {
@@ -7,7 +8,9 @@ interface AnswerQuestionUseCaseResquest {
 }
 
 export class AnswerQuestionUseCase {
-  execute({
+  constructor(private answerRepository: AnserRepository) {}
+
+  async execute({
     instructorId,
     questionId,
     content,
@@ -17,6 +20,8 @@ export class AnswerQuestionUseCase {
       authorId: instructorId,
       questionId,
     })
+
+    await this.answerRepository.create(answer)
 
     return answer
   }
