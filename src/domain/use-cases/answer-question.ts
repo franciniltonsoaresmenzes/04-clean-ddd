@@ -1,5 +1,6 @@
 import { AnserRepository } from '../repositories/answer-repository'
 import { Answer } from '../entities/answer'
+import { UniqueEntityId } from '../../core/entities/unique-entity-id'
 
 interface AnswerQuestionUseCaseResquest {
   instructorId: string
@@ -15,10 +16,10 @@ export class AnswerQuestionUseCase {
     questionId,
     content,
   }: AnswerQuestionUseCaseResquest) {
-    const answer = new Answer({
+    const answer = Answer.create({
       content,
-      authorId: instructorId,
-      questionId,
+      authorId: new UniqueEntityId(instructorId),
+      questionId: new UniqueEntityId(questionId),
     })
 
     await this.answerRepository.create(answer)
