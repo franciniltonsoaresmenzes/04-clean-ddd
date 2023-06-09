@@ -1,4 +1,4 @@
-import { AnserRepository } from '../../repositories/answer-repository'
+import { AnserRepository } from '../repositories/answer-repository'
 import { Answer } from '../entities/answer'
 
 interface AnswerQuestionUseCaseResquest {
