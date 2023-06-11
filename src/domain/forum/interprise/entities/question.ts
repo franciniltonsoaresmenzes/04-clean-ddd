@@ -5,7 +5,7 @@ import { Optional } from '@/core/types/optional'
 import { Slug } from './value-objects/slug'
 import { title } from 'process'
 
-interface QuestionProps {
+export interface QuestionProps {
   authorId: UniqueEntityId
   bestAnwserId?: UniqueEntityId
   title: string
