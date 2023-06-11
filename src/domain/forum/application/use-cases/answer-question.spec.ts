@@ -1,6 +1,6 @@
 import { AnswerQuestionUseCase } from './answer-question'
 import { AnserRepository } from '../repositories/answer-repository'
-import { Answer } from '../entities/answer'
+import { Answer } from '../../interprise/entities/answer'
 
 const fakeAnswerRepository: AnserRepository = {
   create: async (answer: Answer) => {},
