@@ -29,7 +29,7 @@ export class Question extends Entity<QuestionProps> {
   }
 
   get slug() {
-    return this.props.title
+    return this.props.slug
   }
 
   get title() {
