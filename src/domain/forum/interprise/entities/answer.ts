@@ -51,7 +51,7 @@ export class Answer extends Entity<AnswerProps> {
     const answer = new Answer(
       {
         ...props,
-        createdAd: new Date(),
+        createdAd: props.createdAd ?? new Date(),
       },
       id,
     )

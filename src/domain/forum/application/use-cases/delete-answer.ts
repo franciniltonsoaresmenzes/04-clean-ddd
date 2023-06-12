@@ -1,4 +1,4 @@
-import { AnserRepository } from '../repositories/answer-repository'
+import { AnswerRepository } from '../repositories/answer-repository'
 
 interface DeleteAnswerUseCaseResquest {
   authorId: string
@@ -8,7 +8,7 @@ interface DeleteAnswerUseCaseResquest {
 interface DeleteAnswerUseCaseResponse {}
 
 export class DeleteAnswerUseCase {
-  constructor(private answerRepository: AnserRepository) {}
+  constructor(private answerRepository: AnswerRepository) {}
 
   async execute({
     answerId,
