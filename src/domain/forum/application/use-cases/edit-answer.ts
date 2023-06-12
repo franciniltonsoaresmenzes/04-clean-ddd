@@ -1,4 +1,5 @@
-import { AnserRepository } from '../repositories/answer-repository'
+import { Answer } from '../../interprise/entities/answer'
+import { AnswerRepository } from '../repositories/answer-repository'
 
 interface EditAnswerUseCaseResquest {
   authorId: string
@@ -11,7 +12,7 @@ interface EditAnswerUseCaseResponse {
 }
 
 export class EditAnswerUseCase {
-  constructor(private answersRepository: AnserRepository) {}
+  constructor(private answersRepository: AnswerRepository) {}
 
   async execute({
     authorId,
