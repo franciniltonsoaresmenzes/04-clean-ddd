@@ -12,6 +12,11 @@ export class InMemoryAnswersRepository implements AnserRepository {
     return answer
   }
 
+  async save(answer: Answer) {
+    const findIndex = this.items.findIndex((item) => item.id === answer.id)
+    this.items[findIndex] = answer
+  }
+
   async create(answer: Answer) {
     this.items.push(answer)
   }
