@@ -1,7 +1,7 @@
-import { AnserRepository } from '@/domain/forum/application/repositories/answer-repository'
+import { AnswerRepository } from '@/domain/forum/application/repositories/answer-repository'
 import { Answer } from '@/domain/forum/interprise/entities/answer'
 
-export class InMemoryAnswersRepository implements AnserRepository {
+export class InMemoryAnswersRepository implements AnswerRepository {
   public items: Answer[] = []
 
   async findById(id: string) {
