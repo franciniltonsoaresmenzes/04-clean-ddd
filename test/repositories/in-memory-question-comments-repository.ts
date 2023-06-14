@@ -1,7 +1,7 @@
 import { QuestionCommentsRepository } from '@/domain/forum/application/repositories/question-comments-repository'
 import { QuestionComment } from '@/domain/forum/interprise/entities/question-comment'
 
-export class InMemoruQuestionCommentsRepository
+export class InMemoryQuestionCommentsRepository
   implements QuestionCommentsRepository
 {
   public items: QuestionComment[] = []
