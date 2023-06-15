@@ -13,7 +13,7 @@ export function makeQuestionComment(
     {
       authorId: new UniqueEntityId(),
       content: faker.lorem.text(),
-      questonId: new UniqueEntityId(),
+      questionId: new UniqueEntityId(),
       ...override,
     },
     id,
