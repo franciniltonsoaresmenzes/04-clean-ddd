@@ -4,6 +4,7 @@ import { Optional } from '@/core/types/optional'
 import dayjs from 'dayjs'
 import { title } from 'process'
 import { Slug } from './value-objects/slug'
+import { QuestionAttachment } from './question-attachment'
 
 export interface QuestionProps {
   authorId: UniqueEntityId
@@ -11,6 +12,7 @@ export interface QuestionProps {
   title: string
   content: string
   slug: Slug
+  attachments: QuestionAttachment[]
   createdAd: Date
   updatedAt?: Date
 }
@@ -51,6 +53,14 @@ export class Question extends AggregateRoot<QuestionProps> {
     this.touch()
   }
 
+  get attachments() {
+    return this.props.attachments
+  }
+
+  set attachments(attachments: QuestionAttachment[]) {
+    this.props.attachments = attachments
+  }
+
   get createdAd() {
     return this.props.createdAd
   }
@@ -72,13 +82,14 @@ export class Question extends AggregateRoot<QuestionProps> {
   }
 
   static create(
-    props: Optional<QuestionProps, 'createdAd' | 'slug'>,
+    props: Optional<QuestionProps, 'createdAd' | 'slug' | 'attachments'>,
     id?: UniqueEntityId,
   ) {
     const question = new Question(
       {
         ...props,
         slug: props.slug ?? Slug.createFromText(title),
+        attachments: props.attachments ?? [],
         createdAd: props.createdAd ?? new Date(),
       },
       id,
