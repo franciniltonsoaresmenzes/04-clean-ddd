@@ -1,11 +1,11 @@
 import { Entity } from '@/core/entities/entity'
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import { AnswerAttachmentList } from './answer-attachments-list'
 
 export interface AnswerProps {
-  authorId: UniqueEntityId
-  questionId: UniqueEntityId
+  authorId: UniqueEntityID
+  questionId: UniqueEntityID
   content: string
   attachments: AnswerAttachmentList
   createdAd: Date
@@ -57,7 +57,7 @@ export class Answer extends Entity<AnswerProps> {
 
   static create(
     props: Optional<AnswerProps, 'createdAd' | 'attachments'>,
-    id?: UniqueEntityId,
+    id?: UniqueEntityID,
   ) {
     const answer = new Answer(
       {

@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { makeAnswer } from 'test/factories/make-answer'
 import { makeQuestion } from 'test/factories/make-question'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
@@ -52,7 +52,7 @@ describe('Choose Question Best Answer', () => {
 
   it('should not able to choose another user question best answer', async () => {
     const question = makeQuestion({
-      authorId: new UniqueEntityId('authorId-error'),
+      authorId: new UniqueEntityID('authorId-error'),
     })
 
     const answer = makeAnswer({

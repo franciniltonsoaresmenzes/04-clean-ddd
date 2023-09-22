@@ -1,5 +1,5 @@
 import { Either, right } from '@/core/either'
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Answer } from '../../interprise/entities/answer'
 import { AnswerAttachmentList } from '../../interprise/entities/answer-attachments-list'
 import { AnswerRepository } from '../repositories/answer-repository'
@@ -30,13 +30,13 @@ export class AnswerQuestionUseCase {
   }: AnswerQuestionUseCaseResquest): Promise<AnswerQuestionUseCaseResponse> {
     const answer = Answer.create({
       content,
-      authorId: new UniqueEntityId(instructorId),
-      questionId: new UniqueEntityId(questionId),
+      authorId: new UniqueEntityID(instructorId),
+      questionId: new UniqueEntityID(questionId),
     })
 
     const answerAttachments = attachmentsIds.map((attachmentsId) => {
       return AnswerAttachments.create({
-        attachmentId: new UniqueEntityId(attachmentsId),
+        attachmentId: new UniqueEntityID(attachmentsId),
         answerId: answer.id,
       })
     })

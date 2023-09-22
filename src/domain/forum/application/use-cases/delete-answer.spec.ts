@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
 import { DeleteAnswerUseCase } from './delete-answer'
@@ -23,9 +23,9 @@ describe('Delete Answer', () => {
   it('should be able to delete a answer', async () => {
     const newAnswer = makeAnswer(
       {
-        authorId: new UniqueEntityId('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
-      new UniqueEntityId('answer-1'),
+      new UniqueEntityID('answer-1'),
     )
 
     await inMemoryAnswerRepository.create(newAnswer)
@@ -33,11 +33,11 @@ describe('Delete Answer', () => {
     inMemoryAnswerAttachmentsRepository.items.push(
       makeAnswerAttachments({
         answerId: newAnswer.id,
-        attachmentId: new UniqueEntityId('1'),
+        attachmentId: new UniqueEntityID('1'),
       }),
       makeAnswerAttachments({
         answerId: newAnswer.id,
-        attachmentId: new UniqueEntityId('2'),
+        attachmentId: new UniqueEntityID('2'),
       }),
     )
 
@@ -53,9 +53,9 @@ describe('Delete Answer', () => {
   it('should not able to delete a question', async () => {
     const newAnswer = makeAnswer(
       {
-        authorId: new UniqueEntityId('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
-      new UniqueEntityId('answer-1'),
+      new UniqueEntityID('answer-1'),
     )
 
     await inMemoryAnswerRepository.create(newAnswer)

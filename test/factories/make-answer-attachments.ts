@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import {
   AnswerAttachmentProps,
   AnswerAttachments,
@@ -6,12 +6,12 @@ import {
 
 export function makeAnswerAttachments(
   override: Partial<AnswerAttachmentProps> = {},
-  id?: UniqueEntityId,
+  id?: UniqueEntityID,
 ) {
   const answerAttachment = AnswerAttachments.create(
     {
-      answerId: new UniqueEntityId(),
-      attachmentId: new UniqueEntityId(),
+      answerId: new UniqueEntityID(),
+      attachmentId: new UniqueEntityID(),
       ...override,
     },
     id,

@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either'
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Answer } from '../../interprise/entities/answer'
 import { AnswerAttachments } from '../../interprise/entities/answer-attachment'
 import { AnswerAttachmentList } from '../../interprise/entities/answer-attachments-list'
@@ -50,7 +50,7 @@ export class EditAnswerUseCase {
 
     const answersAttachments = attachmentsIds.map((attachmentId) => {
       return AnswerAttachments.create({
-        attachmentId: new UniqueEntityId(attachmentId),
+        attachmentId: new UniqueEntityID(attachmentId),
         answerId: answer.id,
       })
     })

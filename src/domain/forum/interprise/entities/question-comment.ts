@@ -1,9 +1,9 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import { Comment, CommentProps } from './comment'
 
 export interface QuestionComentProps extends CommentProps {
-  questionId: UniqueEntityId
+  questionId: UniqueEntityID
 }
 
 export class QuestionComment extends Comment<QuestionComentProps> {
@@ -13,7 +13,7 @@ export class QuestionComment extends Comment<QuestionComentProps> {
 
   static create(
     props: Optional<QuestionComentProps, 'createdAd'>,
-    id?: UniqueEntityId,
+    id?: UniqueEntityID,
   ) {
     const questionComent = new QuestionComment(
       {

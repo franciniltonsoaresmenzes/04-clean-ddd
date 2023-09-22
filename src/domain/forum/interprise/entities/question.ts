@@ -1,5 +1,5 @@
 import { AggregateRoot } from '@/core/entities/aggregate-root'
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
 import dayjs from 'dayjs'
 import { title } from 'process'
@@ -7,8 +7,8 @@ import { QuestionAttachmentList } from './question-attatchment-list'
 import { Slug } from './value-objects/slug'
 
 export interface QuestionProps {
-  authorId: UniqueEntityId
-  bestAnwserId?: UniqueEntityId
+  authorId: UniqueEntityID
+  bestAnwserId?: UniqueEntityID
   title: string
   content: string
   slug: Slug
@@ -26,7 +26,7 @@ export class Question extends AggregateRoot<QuestionProps> {
     return this.props.bestAnwserId
   }
 
-  set bestAnwserId(bestAnwserId: UniqueEntityId | undefined) {
+  set bestAnwserId(bestAnwserId: UniqueEntityID | undefined) {
     this.props.bestAnwserId = bestAnwserId
   }
 
@@ -84,7 +84,7 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   static create(
     props: Optional<QuestionProps, 'createdAd' | 'slug' | 'attachments'>,
-    id?: UniqueEntityId,
+    id?: UniqueEntityID,
   ) {
     const question = new Question(
       {

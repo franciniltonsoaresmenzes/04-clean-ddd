@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { QuestionComment } from '../../interprise/entities/question-comment'
 import { QuestionCommentsRepository } from '../repositories/question-comments-repository'
 import { QuestionsRepository } from '../repositories/questions-repository'
@@ -34,8 +34,8 @@ export class CommentOnQuestionUseCase {
     if (!question) left(new ResourceNotFoundError())
 
     const questionComment = QuestionComment.create({
-      authorId: new UniqueEntityId(authorId),
-      questionId: new UniqueEntityId(questionId),
+      authorId: new UniqueEntityID(authorId),
+      questionId: new UniqueEntityID(questionId),
       content,
     })
 
